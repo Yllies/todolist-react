@@ -2,6 +2,34 @@
 
 Ceci est une To-do List avec possibilité de faire le CRUD fait avec la stack MERN
 
+# Documentation Brève - TodoList MERN
+
+## Architecture
+
+L'application TodoList utilise la stack MERN :
+
+- **MongoDB:** Base de données NoSQL pour la flexibilité.
+  
+- **Express.js:** Backend minimaliste avec routes RESTful.
+
+- **React.js:** Frontend réactif.
+
+- **Node.js:** Exécution du serveur backend.
+
+## Choix Techniques
+
+- **Base de Données:** MongoDB.
+
+- **Backend:** Node.js, Express.js avec Mongoose pour la gestion des données.
+
+- **Frontend:** React.js.
+
+## Développement Local
+
+- **Nodemon:** Redémarrage automatique du serveur backend.
+
+Cette architecture favorise la simplicité et la rapidité de développement pour une TodoList efficace avec la stack MERN.
+
 ## Configuration
 
 Avant de commencer, assurez-vous d'avoir [Node.js](https://nodejs.org/) et [Yarn](https://yarnpkg.com/) installés sur votre machine.
