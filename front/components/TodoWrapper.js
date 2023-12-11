@@ -39,9 +39,9 @@ export const TodoWrapper = () => {
         </h1>
         <TodoForm setIsAdded={setIsAdded} />
         {/* On affiche la liste des tâches */}
-        {allTasks.map((task) => (
+        {allTasks.map((task, index) => (
           <Todo
-            key={task.id}
+            key={index}
             task={task}
             setIsDeleted={setIsDeleted}
             setTaskUpdated={setTaskUpdated}

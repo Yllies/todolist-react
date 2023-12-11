@@ -15,9 +15,11 @@ router.get("/", async (req, res) => {
 // Ajoute une task
 router.post("/add", async (req, res) => {
   // Destructuring de data
-  const { description } = req.body;
+  const { title, description } = req.body;
+
   try {
     const newTask = new Task({
+      title,
       description,
       done: false,
     });
@@ -44,6 +46,23 @@ router.delete("/delete/:id", async (req, res) => {
   try {
     const deletedTask = await Task.findByIdAndDelete(req.params.id);
     res.status(200).json(deletedTask);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+router.put("/update-status/:id", async (req, res) => {
+  const { id } = req.params;
+  const { done } = req.body; // Nouveau statut "done"
+
+  try {
+    const updatedTask = await Task.findByIdAndUpdate(
+      id,
+      { done },
+      { new: true } // Renvoie la tâche mise à jour
+    );
+
+    res.status(200).json(updatedTask);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }

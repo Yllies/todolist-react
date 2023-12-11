@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 export const EditTaskForm = ({ task, setIsUpdated, setTaskUpdated }) => {
-  const [value, setValue] = useState(task.description);
+  const [description, setDescription] = useState(task.description);
+  const [title, setTitle] = useState(task.title);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,10 +14,10 @@ export const EditTaskForm = ({ task, setIsUpdated, setTaskUpdated }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ description: value }),
+        body: JSON.stringify({ title, description }),
       });
 
-      if (response.ok) {
+      if (response.ok && title && description) {
         const taskUpdated = await response.json();
         // setTaskUpdated permet à chaque mise à jour de relancer le useEffect du composant parent
         setTaskUpdated(taskUpdated);
@@ -34,8 +35,15 @@ export const EditTaskForm = ({ task, setIsUpdated, setTaskUpdated }) => {
     <form onSubmit={handleSubmit} className="TodoForm">
       <input
         type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        className="todo-input"
+        placeholder="Modifiez le titre"
+      />
+      <input
+        type="text"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
         className="todo-input"
         placeholder="Modifiez la tâche"
       />
