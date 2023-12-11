@@ -2,8 +2,6 @@
 
 Ceci est une To-do List avec possibilité de faire le CRUD fait avec la stack MERN
 
-# Documentation Brève - TodoList MERN
-
 ## Architecture
 
 L'application TodoList utilise la stack MERN :
