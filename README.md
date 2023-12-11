@@ -52,8 +52,6 @@ Ajoutez votre chaîne de connexion MongoDB dans le fichier .env avec la clé CON
 
 **CONNECTION_STRING=VOTRE_CHAINE_DE_CONNEXION_MONGODB**
 
-### Démarrage du serveur
-
 # Backend
 Accédez au répertoire du backend et lancez le serveur backend avec la commande suivante :
 
