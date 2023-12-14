@@ -40,7 +40,6 @@ Accédez au répertoire du backend et installez les dépendances du backend :
 
 Puis, accédez au répertoire du frontend et installez les dépendances du frontend :
 
-**cd front**
 **yarn install**
 
 ### Configuration de la base de données
